@@ -33,10 +33,10 @@ jobs:
     secrets:
 
       # Only needed if with:dockerhub-enable is true below
-      dockerhub-username: ${{ sleevasrujana1 }}
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
 
       # Only needed if with:dockerhub-enable is true below
-      dockerhub-token: ${{ dckr_pat_5yQG8ISglVGFf-XlwE8NZD_SNb8 }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
 
     with:
       
@@ -44,8 +44,8 @@ jobs:
       ### ENABLE ONE OR BOTH REGISTRIES
       ### tell docker where to push.
       ### NOTE if Docker Hub is set to true, you must set secrets above and also add account/repo/tags below
-      dockerhub-enable: true
-      ghcr-enable: true
+      dockerhub-enable: false
+      ghcr-enable: false
 
       ### REQUIRED 
       ### A list of the account/repo names for docker build. List should match what's enabled above
